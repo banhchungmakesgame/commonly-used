@@ -1,0 +1,23 @@
+location ~ .+\.unityweb$ {
+	add_header Content-Encoding gzip;
+	add_header Content-Type application/octet-stream;
+}
+location ~ .+\.data\.br$ { add_header Content-Encoding br; }
+location ~ .+\.js\.br$ {
+	add_header Content-Encoding br;
+	default_type application/javascript;
+}
+location ~ .+\.wasm\.br$ {
+	add_header Content-Encoding br;
+	default_type application/wasm;
+}
+
+location ~ .+\.data\.gz$ { add_header Content-Encoding gzip; }
+location ~ .+\.js\.gz$ {
+	add_header Content-Encoding gzip;
+	default_type application/javascript;
+}
+location ~ .+\.wasm\.gz$ {
+	add_header Content-Encoding gzip;
+	default_type application/wasm;
+}
